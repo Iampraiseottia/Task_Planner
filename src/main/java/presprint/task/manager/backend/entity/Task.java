@@ -29,7 +29,7 @@ public class Task {
 	private Status status;
 
 	@Column(name="coverage_percentage" ,columnDefinition = " Integer comment 'poucentage de evolution de la tache'")
-	private int  coverage_percentage;
+	private int  coveragePercentage;
 
 	@Column(name="title")
 	private String  title;
@@ -38,7 +38,7 @@ public class Task {
 	private String description;
 
 	@Column(name="registration_date")
-	private Date registration_date;
+	private Date registrationDate;
 
 	@Column(name="duration" ,columnDefinition = " Integer comment 'duree de la tache'")
 	private int  duration;
