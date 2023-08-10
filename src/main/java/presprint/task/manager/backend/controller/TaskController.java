@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import presprint.task.manager.backend.entity.Employee;
 import presprint.task.manager.backend.entity.Status;
 import presprint.task.manager.backend.entity.Task;
 import presprint.task.manager.backend.entity.Tracking;
@@ -125,4 +126,107 @@ public class TaskController {
 		}
 		return new ResponseEntity<List<TaskReaderDTO>>(dtoReaderHelper.convert(tasks), HttpStatus.OK);
 	}
+  @RequestMapping(value="/assign", method=RequestMethod.POST)
+  public ResponseEntity<String> assignTo(@RequestParam("id_task") int id, @RequestParam("employee_name") String name){
+		Optional<Task> task= taskService.findById(id);
+		Employee employee= employeeRepository.findByName(name);
+		if(!task.isPresent()||employee==null)
+		return new ResponseEntity<String>("KO", HttpStatus.NOT_ACCEPTABLE);
+		else{
+			Task taskEntity = task.get();
+			taskEntity.setEmployee(employee);
+			taskService.save(taskEntity);
+			Tracking tracking = new Tracking();
+			tracking.setOperation("ASSIGNED THE TASK");
+			tracking.setOperationDate(new Date())	;
+			tracking.setTask(taskEntity);
+			trackingService.save(tracking);
+		    return new ResponseEntity<String>("OK", HttpStatus.ACCEPTED);
+		}
+
+	}
+  
+  
+  @RequestMapping(value="/registerProgression",method=RequestMethod.POST)
+  public ResponseEntity<String> registerProgression(@RequestParam("id_task") int id, @RequestParam("coverage_percentage") int coveragePercentage){
+		Optional<Task> task= taskService.findById(id);
+		if(!task.isPresent())
+		return new ResponseEntity<String>("KO", HttpStatus.NOT_ACCEPTABLE);
+		else{
+			Task taskEntity = task.get();
+			taskEntity.setCoveragePercentage(coveragePercentage);
+			taskService.save(taskEntity);
+			Tracking tracking = new Tracking();
+			tracking.setOperation("UPDATED THE PROGRESSION");
+			tracking.setOperationDate(new Date())	;
+			tracking.setTask(taskEntity);
+			trackingService.save(tracking);
+		    return new ResponseEntity<String>("OK", HttpStatus.ACCEPTED);
+		}
+
+	}
+  
+  
+  @RequestMapping(value="/markAsDone",method=RequestMethod.POST)
+  public ResponseEntity<String> markAsDone(@RequestParam("id_task") int id){
+		Optional<Task> task= taskService.findById(id);
+		Status status  = statusRepository.findByName("DONE");
+		if(!task.isPresent())
+		return new ResponseEntity<String>("KO", HttpStatus.NOT_ACCEPTABLE);
+		else{
+			Task taskEntity = task.get();
+			taskEntity.setStatus(status);
+			taskService.save(taskEntity);
+			Tracking tracking = new Tracking();
+			tracking.setOperation("MARKED AS DONE");
+			tracking.setOperationDate(new Date())	;
+			tracking.setTask(taskEntity);
+			trackingService.save(tracking);
+		    return new ResponseEntity<String>("OK", HttpStatus.ACCEPTED);
+		}
+
+	}
+  
+  @RequestMapping(value="/markAsNotDone",method=RequestMethod.POST)
+  public ResponseEntity<String> markAsNotDone(@RequestParam("id_task") int id){
+		Optional<Task> task= taskService.findById(id);
+		Status status  = statusRepository.findByName("NOT DONE");
+		if(!task.isPresent())
+		return new ResponseEntity<String>("KO", HttpStatus.NOT_ACCEPTABLE);
+		else{
+			Task taskEntity = task.get();
+			taskEntity.setStatus(status);
+			taskService.save(taskEntity);
+			Tracking tracking = new Tracking();
+			tracking.setOperation("MARKED AS NOT DONE");
+			tracking.setOperationDate(new Date())	;
+			tracking.setTask(taskEntity);
+			trackingService.save(tracking);
+		    return new ResponseEntity<String>("OK", HttpStatus.ACCEPTED);
+		}
+
+	}
+  
+  @RequestMapping(value="/reinitialize", method=RequestMethod.POST)
+  public ResponseEntity<String> reinitialize(@RequestParam("id_task") int id){
+		Optional<Task> task= taskService.findById(id);
+		Status status  = statusRepository.findByName("OPENED");
+		if(!task.isPresent())
+		return new ResponseEntity<String>("KO", HttpStatus.NOT_ACCEPTABLE);
+		else{
+			Task taskEntity = task.get();
+			taskEntity.setStatus(status);
+			taskEntity.setCoveragePercentage(0);
+			taskEntity.setEmployee(null);
+			taskService.save(taskEntity);
+			Tracking tracking = new Tracking();
+			tracking.setOperation("MARKED AS REINITIALIZE");
+			tracking.setOperationDate(new Date())	;
+			tracking.setTask(taskEntity);
+			trackingService.save(tracking);
+		    return new ResponseEntity<String>("OK", HttpStatus.ACCEPTED);
+		}
+
+	}
+  
 }
