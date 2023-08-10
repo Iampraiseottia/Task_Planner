@@ -8,6 +8,14 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+/**
+ * 
+ * @author PRESPRINT PLC August 2023
+ * This Code is mainly for the training of trainee
+ * to communicate with a  basic backend service through 
+ * ajax call
+ *
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {                                    

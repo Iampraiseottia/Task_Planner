@@ -25,7 +25,14 @@ import presprint.task.manager.backend.service.DTOReaderHelper;
 import presprint.task.manager.backend.service.StatusService;
 import presprint.task.manager.backend.service.TaskService;
 import presprint.task.manager.backend.service.TrackingService;
-
+/**
+ * 
+ * @author PRESPRINT PLC August 2023
+ * This Code is mainly for the training of trainee
+ * to communicate with a  basic backend service through 
+ * ajax call
+ *
+ */
 @RestController
 @RequestMapping("/api/v1/task")
 public class TaskController {
