@@ -9,7 +9,14 @@ import presprint.task.manager.backend.service.StatusService;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 
+ * @author PRESPRINT PLC August 2023
+ * This Code is mainly for the training of trainee
+ * to communicate with a  basic backend service through 
+ * ajax call
+ *
+ */
 @RestController
 @RequestMapping("/api/v1/status")
 public class StatusController {

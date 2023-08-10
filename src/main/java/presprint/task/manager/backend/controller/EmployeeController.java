@@ -8,7 +8,14 @@ import presprint.task.manager.backend.service.EmployeeService;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 
+ * @author PRESPRINT PLC August 2023
+ * This Code is mainly for the training of trainee
+ * to communicate with a  basic backend service through 
+ * ajax call
+ *
+ */
 @RestController
 @RequestMapping("/api/v1/employee")
 public class EmployeeController {
@@ -19,7 +26,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value="/getAllEmployees", method = RequestMethod.GET)
-    public List<String> getAllStatus() {
+    public List<String> getAllEmployees() {
         List<Employee> allEmployees = employeeService.findAll();
         List<String> employees = new ArrayList<String>();
         for (Employee status: allEmployees) {

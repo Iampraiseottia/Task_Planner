@@ -53,11 +53,6 @@ public class TaskController {
 		this.statusRepository =statusRepository;
 	}
 
-	@RequestMapping(value="/test", method =RequestMethod.GET)
-	public String sayHello(@RequestParam("message") String message) {
-		return "Hello Sir="+message;
-	}
-
 	@RequestMapping(value="/create", method = RequestMethod.POST)
 	public ResponseEntity<String> create(@RequestBody TaskDTO taskDTO){
 
