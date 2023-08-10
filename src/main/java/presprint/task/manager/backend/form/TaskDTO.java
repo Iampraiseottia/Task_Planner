@@ -13,11 +13,13 @@ import presprint.task.manager.backend.entity.Status;
 @NoArgsConstructor
 public class TaskDTO {
 
+	private int id;
 	private Employee employee;
 	private Status status;
-	private int  coverage_percentage;
+	private int  coveragePercentage;
 	private String  title;
 	private String description;
-	private Date registration_date;
+	private Date registrationDate;
+	private int duration;
 
 }
