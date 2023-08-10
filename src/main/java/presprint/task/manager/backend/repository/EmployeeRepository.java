@@ -8,6 +8,5 @@ import presprint.task.manager.backend.entity.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
- Employee  findByName(String name);
-
+    Employee findByName(String name);
 }
