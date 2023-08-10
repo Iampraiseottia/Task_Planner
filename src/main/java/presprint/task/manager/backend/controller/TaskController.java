@@ -1,5 +1,6 @@
 package presprint.task.manager.backend.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -12,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import presprint.task.manager.backend.entity.Status;
 import presprint.task.manager.backend.entity.Task;
 import presprint.task.manager.backend.entity.Tracking;
 import presprint.task.manager.backend.form.TaskDTO;
 import presprint.task.manager.backend.form.TaskReaderDTO;
+import presprint.task.manager.backend.repository.EmployeeRepository;
+import presprint.task.manager.backend.repository.StatusRepository;
 import presprint.task.manager.backend.service.DTOReaderHelper;
 import presprint.task.manager.backend.service.StatusService;
 import presprint.task.manager.backend.service.TaskService;
@@ -28,11 +32,17 @@ public class TaskController {
 	private TaskService taskService;
 	private TrackingService trackingService;
 	private DTOReaderHelper dtoReaderHelper;
-	public TaskController(StatusService statusService, TaskService taskService, TrackingService trackingService, DTOReaderHelper dtoReaderHelper) {
+	private EmployeeRepository employeeRepository;
+	private StatusRepository statusRepository;
+	
+	public TaskController(StatusService statusService, TaskService taskService, TrackingService trackingService, 
+			DTOReaderHelper dtoReaderHelper, EmployeeRepository employeeRepository, StatusRepository statusRepository) {
 		this.statusService = statusService;
 		this.taskService = taskService;
 		this.trackingService  =trackingService;
 		this.dtoReaderHelper  =dtoReaderHelper;
+		this.employeeRepository  =employeeRepository;
+		this.statusRepository =statusRepository;
 	}
 
 	@RequestMapping(value="/test", method =RequestMethod.GET)
@@ -92,16 +102,27 @@ public class TaskController {
 	}
 
 	@RequestMapping(value="/readAll", method = RequestMethod.GET)
-	public List<Task> readAll(@RequestParam("id") int id){
+	public ResponseEntity<List<TaskReaderDTO>>  readAll(){
 		List<Task> tasks = taskService.findAll();
-		return tasks;
+		return new ResponseEntity<List<TaskReaderDTO>>(dtoReaderHelper.convert(tasks), HttpStatus.OK);
 	}
-/*
-	@RequestMapping(value="/readAll", method = RequestMethod.GET)
-	public List<Task> readMany(@RequestParam("id") int id){
-		List<Task> task = taskService.findMany();
-		return task;
-	}
-*/
 
+	@RequestMapping(value="/readMany", method = RequestMethod.GET)
+	public ResponseEntity<List<TaskReaderDTO>>  readMany(@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate, @RequestParam(name="employee", required=false) Optional<String> employee, @RequestParam(name="status", required=false) Optional<String> status){
+		List<Task> tasks = new ArrayList<Task>();
+		if(!employee.isPresent()&&!status.isPresent()) tasks= taskService.findByRegistrationDateBetween(startDate, endDate);
+		else {
+			if(employee.isPresent()&&status.isPresent()) {
+				tasks=taskService.findByEmployeeAndStatusAndRegistrationDateBetween(employeeRepository.findByName(employee.get()), statusRepository.findByName(status.get()), startDate, endDate);
+			}else {
+				if(employee.isPresent()) {
+					tasks=taskService.findByEmployeeAndRegistrationDateBetween(employeeRepository.findByName(employee.get()), startDate, endDate);
+				}else {
+					tasks=taskService.findByStatusAndRegistrationDateBetween(statusRepository.findByName(status.get()), startDate, endDate);
+
+				}
+			}
+		}
+		return new ResponseEntity<List<TaskReaderDTO>>(dtoReaderHelper.convert(tasks), HttpStatus.OK);
+	}
 }
