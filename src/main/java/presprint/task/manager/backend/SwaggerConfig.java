@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 
  * @author PRESPRINT PLC August 2023
  * This Code is mainly for the training of trainee
- * to communicate with a  basic backend service through 
+ * for a communication with a  basic backend service through 
  * ajax call
  *
  */
