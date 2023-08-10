@@ -14,12 +14,8 @@ import presprint.task.manager.backend.entity.Status;
 public class TaskDTO {
 
 	private int id;
-	private Employee employee;
-	private Status status;
-	private int  coveragePercentage;
 	private String  title;
 	private String description;
-	private Date registrationDate;
 	private int duration;
 
 }
