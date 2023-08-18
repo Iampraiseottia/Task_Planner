@@ -1,0 +1,146 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: snow;
+    font-family: 'poppins', sans-serif;
+    position: relative;
+}
+
+.container{
+    display: flex;
+}
+
+/* SIDE-BAR */
+
+#side-bar{
+    position: sticky;
+    max-height: 100vh;
+    width: 11%;
+    background-color: #2ec4b6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 130px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding-bottom: 119px;
+}
+
+.side-bar-1,
+.side-bar-2,
+.side-bar-3,
+.side-bar-4{
+    color: snow;
+    font-size: 18px;
+    opacity: 0.65;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.side-bar-p1,
+.side-bar-p2,
+.side-bar-p3{
+    height: 56px;
+    width: 56px;
+    align-items: center;
+    margin: 23px 0px 10px 28px;
+    border-radius: 8px;
+}
+
+.side-bar-p1{
+    background: #b12a2a;
+}
+
+.side-bar-p2{
+    background: #385ec1;
+}
+
+.side-bar-p3{
+    background: #2ddb3e;
+}
+
+span:hover{
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.side-bar-p1:hover,
+.side-bar-p2:hover,
+.side-bar-p3:hover{
+    height: 56px;
+    width: 56.5px;
+    cursor: pointer;
+}
+
+/* MAIN-SECTION */
+#main{
+    margin-top: 136px;
+    line-height: 1.5;
+}
+
+.main1{
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main1:hover{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.main2{
+    margin-left: 15px;
+    height: 70px;
+    width: 800px;
+    background: #2ec4b6;
+    padding: 17px 0px 0px 15px;
+    border: 1px solid #2ec4b6;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.main2-frame-p{
+    height: 50px;
+    width: 50px;
+    background: lightgrey;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    margin-right: 12px
+}
+
+.main2-text-p p{
+    color: snow;
+    opacity: 0.8;
+}
+
+.main2-text-p:hover{
+    color: white;
+    opacity: 0.8.5;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.main3{
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+.main3 p{
+    margin-top: 20px;
+    height: 50px;
+    width: 600px;
+    background: lightgray;
+    padding-left: 50px;
+    padding-top: 25px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
