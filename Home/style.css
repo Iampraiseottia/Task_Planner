@@ -76,7 +76,24 @@ body{
     width: 56.5px;
     /* cursor: pointer; */
 }
-
+.new_task{
+    background-color: #ffffff;
+    width: 100%;
+    height: 20vh;
+    /* position: fixed; */
+}
+.register{
+    text-decoration: none;
+    position: absolute;
+    right: 0%;
+    margin: 30px 50px 0px 0px;
+    font-size: 16px;
+    color: black;
+    border: 1px solid;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px;
+}
 /* MAIN-SECTION
 #main{
     margin-top: 136px;
@@ -146,7 +163,7 @@ body{
 } */
 aside{
     width: 90%;
-    margin-top: 100px;
+    padding-top: 0vh;
     padding-left: 10%;
 }
 aside h1{
