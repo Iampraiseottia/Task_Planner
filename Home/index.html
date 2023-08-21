@@ -5,30 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task_Planner Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/11a45b44df.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
-    <div class="container">
+
         <!------------------SIDEBAR--------------------->
         <section id="side-bar">
             <div class="side-bar-1">
-                <span>options</span>
+                <span>Options</span>
             </div>
             <div class="side-bar-2">
                 <p class="side-bar-p1"></p>
-                <span>view tasks</span>
+                <span class="hover">view tasks</span>
             </div>
             <div class="side-bar-3">
                 <p class="side-bar-p2"></p>
-                <span>edit tasks</span>
+                <span class="hover">edit tasks</span>
             </div>
             <div class="side-bar-4">
                 <p class="side-bar-p3"></p>
-                <span>generate report</span>
+                <span class="hover">report</span>
             </div>
         </section>
 
-        <!--------------MAIN--------------------------->
+        <!-- this is the center of the page-->
+        <aside class="center">
+            <h1 class="heading">
+                Let's Plan Now!
+            </h1>
+            <div class="paragraph_width">
+                    <div class="base_image">
+                        <img src="https://beta.finance.si/pics/cache_vp/vprasaj01-ss-5f733e33c5dfc.jpg.cut.s-5f733e357eb71.jpg" alt="woman thinking of what to do">
+                    </div>
+                <!-- <div class="stay_right"> -->
+                    <p id="main_p"> 
+                        Planify helps you keep track of all your tasks and 
+                        activities so that you don't loss track of time. It is effective, 
+                        and time saving.
+                    </p>
+                <!-- </div> -->
+            </div>
+            <div class="tasks">
+                <div class="task_1">
+                    <i class="fa-sharp fa-solid fa-book-open-reader"></i>
+                    <h2>View tasks</h2>
+                    <p>View all your scheduled tasks for a pre-set duration and take proper action 
+                        towards the goals set to achieve that task
+                    </p>
+                </div>
+                <div class="task_1">
+                    <i class="fa-solid fa-highlighter"></i>
+                    <h2>edit tasks</h2>
+                    <p>Made an error with one of your tasks, don't fret! just click on it and have it editted.
+                        Everything is well structured for you.
+                    </p>
+                </div>
+                <div class="task_1">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    <h2>reassign tasks</h2>
+                    <p>The system automatically reassign's your tasks to another employee if you are caught 
+                        up with other activities.
+                    </p>
+                </div>
+            </div>
+        </aside>
+ 
+        <!-- ------------MAIN-------------------------
         <section id="main">
             <div class="main1">
                 All tasks
@@ -45,13 +87,12 @@
                     </div>
                 </div>
             </div>
+        
             <div class="main3">
                 <p>this is task 1</p>
                 <p>this is task 2</p>
                 <p>this is task 3</p>
             </div>
-        </section>
-    </div>
-
+        </section>-->
 </body>
 </html>
