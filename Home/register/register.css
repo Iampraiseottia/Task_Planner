@@ -4,6 +4,7 @@
     font-family: 'poppins', 'sans-serif';
     box-sizing: border-box;
 }
+
 body{
     justify-content: center;
     display: flex;
@@ -22,25 +23,28 @@ body{
     width: 500px;
     border-radius: 10px;
     padding: 40px 40px;
-
 }
+
 .wrapper .borderline{
     border: 2px solid #dbdbdb;
     border-radius: 10px;
     padding: 40px;
 }
+
 .wrapper h1{
     text-align: center;
     font-size: 36px;
     color: rgb(255, 255, 255);
     font-weight: 400;
 }
+
 .wrapper .input_box{
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
 }
+
 .input_box input{
     width: 100%;
     height: 100%;
@@ -52,7 +56,8 @@ body{
     padding: 0px 35px;
     color: white;
 }
-.input_box span{
+
+.input_box label{
     position: absolute;
     left: 35px;
     top: 30%;
@@ -60,12 +65,14 @@ body{
     transition: 0.5s;
     pointer-events: none;
 }
-.input_box input:valid ~ span,
-.input_box input:focus ~span{
+
+.input_box input:valid ~ label,
+.input_box input:focus ~label{
     color: rgb(255, 255, 255);
-    font-size: 18px;
-    transform: translateY(-34px);
+    font-size: 16px;
+    transform: translateY(-25px);
 } 
+
 .input_box i{
     position: absolute;
     left: 0;
@@ -77,21 +84,25 @@ body{
     pointer-events: none;
     background: #fefefe;
 }
+
 .input_box small{
     margin: 0 2px;
     visibility: hidden;
-    color: red;
+    color: rgba(253, 6, 6, 0.843);
 }
+
 /* .input_box input::placeholder{
     position: absolute;
     color: rgb(255, 255, 255);
     left: 35px;
 } */
+
 .input_box box-icon{
     position: absolute;
     left: 7px;
     font-size: 36px;
 }
+
 .wrapper .btn{
     width: 100%;
     height: 45px;
@@ -104,6 +115,4 @@ body{
     color: #333;
     font-weight: 600;
 }
-.wrapper .btn:hover{
-    box-shadow: 0 0px 20px black unset;
-}
+
