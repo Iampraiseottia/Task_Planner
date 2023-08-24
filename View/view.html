@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIEW | TASK PLANNER</title>
+    <link rel="stylesheet" href="view.css">
+</head>
+<body>
+    <!----------------------ALL TASK ------------------------------->
+    <section id="view-head">
+        <h1>
+           ~ ALL TASK ~
+        </h1>
+        <div class="search-area">
+            <input type="text" placeholder="Search" class="search" autocomplete="on">
+            <img src="img/search.svg" class="search-img" >
+        </div>
+    </section>
+
+    <section id="sort">       
+        <h1>
+            Sort By : 
+        </h1>
+        <button class="sort-btn">Open</button>
+        <button class="sort-btn">Assign</button>
+        <button class="sort-btn">Done</button>
+        <button class="sort-btn">Not-Done</button>
+    </section>
+
+    <section id="table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="cell-highlight">No.</th>
+                    <th class="cell-highlight">Title</th>
+                    <th class="cell-highlight">Description</th>
+                    <th class="cell-highlight">Assignee</th>
+                    <th class="cell-highlight">Duration</th>
+                    <th class="cell-highlight">Progress</th>
+                </tr>
+            </thead>
+        </table>
+    </section>
+
+   
+
+    <div class="report">
+        <button class="report-btn">
+            Report
+        </button>
+    </div>
+
+ </body>
+</html>
