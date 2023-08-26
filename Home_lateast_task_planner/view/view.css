@@ -1,0 +1,131 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: sans-serif, 'poppins';
+    background: rgb(246, 243, 243);
+}
+
+/*ALL TASK*/
+#view-head{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin-left:120px;
+    margin-right: 130px;
+    margin-top: 30px;
+}
+
+.search-area{
+    display: flex;
+    align-items: center;
+}
+
+.search-img{
+    width: 36px;
+    height: 30px;
+    border: 1px solid lightgray;
+    margin-left: 0px;
+    padding: 5px;
+}
+
+.search-img:hover{
+    cursor: pointer;
+}
+
+.search{
+    height: 40px;
+    width: 360px;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+    margin-right: 0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+}
+
+
+#view-head h1{
+    color: rgb(236, 213, 85);
+    font-size: 30px;
+}
+
+#view-head h1:hover{
+    font-size: 30.5px;
+    cursor: pointer;
+}
+
+/*SORT*/
+#sort{
+    margin: 50px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sort h1{
+    color: rgb(6, 230, 118);
+}
+
+.sort-btn{
+    height: 50px;
+    width: 93px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid rgb(158, 148, 90);
+    background-color: rgb(223, 189, 165);
+    backdrop-filter: blur(22px);
+    border-radius: 5px;  
+    box-shadow: 0 0 6px rgb(29, 28, 28);
+}
+
+.report-btn{
+    text-align: center;
+    height: 50px;
+    width: 93px;
+    font-size: 18px;
+    border: 1px solid rgb(223, 189, 165);
+    background-color: rgb(158, 148, 90);
+    backdrop-filter: blur(22px);
+    margin-left: 450px;
+    border-radius: 5px;
+    margin-top: 100px;
+    box-shadow: 0 0 6px rgb(29, 28, 28);
+    cursor: pointer;
+}
+
+/* TABLE */
+#table{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+}
+
+thead{
+    color: gray;
+    letter-spacing: 2px;
+}
+
+thead th{
+    width: 148px;
+}
+
+.cell-highlight{
+    background-color: rgb(229, 222, 182);
+    font-weight: bold;
+    font-size: 19px;
+}
