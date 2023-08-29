@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIEW | TASK PLANNER</title>
+    <link rel="stylesheet" href="view.css">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+    
+
+    <nav>
+        <div id="nav-icon">
+            <img src="../img/github-icon.png" class="home-img">
+            <h1>
+                PLANIFY
+            </h1>
+        </div>
+
+        <div id="links">
+            <a href="../index.html  " class="view">Home</a>
+            <a href="../register/register.html" class="register">Register Task</a>
+        </div>
+    </nav>
+    
+
+    <!----------------------ALL TASK ------------------------------->
+    <section id="view-head">
+        <h1>
+           ~ ALL TASK ~
+        </h1>
+
+        <div class="view-right">
+            <div class="view-right-all">
+                <div class="start-date">
+                    <label>Start Date</label><br>
+                    <input type="date" placeholder="Start-Date" class="start-date-input" >
+                </div>
+        
+                <div class="end-date">
+                    <label>End Date</label><br>
+                    <input class="start-date-input" type="date" placeholder="Start-Date" >
+                </div>
+        
+                <div class="assign">
+                    <label>Assign</label><br>
+                    <select name="Sort" id="sorting-tasks">
+                        <option value="Open"></option>
+                        <option value="Open"></option>
+                        <option value="Open"></option>
+                        <option value="Open"></option>
+                        <option value="Open"></option>                                        
+                    </select>
+                </div>
+        
+                <div class="assign">
+                    <label>Status</label><br>
+                    <select name="Sort" id="sorting-tasks">
+                        <option value="sort-list">Open</option>
+                        <option value="sort-list">Assign</option>
+                        <option value="sort-list">Done</option>
+                        <option value="sort-list">Not-Done</option>                    
+                    </select>
+                </div>
+            </div>
+            
+            <div class="search-area">
+                <input type="text" id="search" placeholder="Live Searching..." class="search" autocomplete="on">
+                <h4 style="color: rgb(196, 98, 98);" id="error"></h4>
+            </div>
+
+        </div>
+            
+
+    </section>
+
+
+    <section id="table" style="margin-top: 60px;">
+        <table>
+            <thead>
+                <tr>
+                    <th class="cell-highlight">Task No.</th>
+                    <th class="cell-highlight">Title</th>
+                    <th class="cell-highlight">Duration</th>
+                    <th class="cell-highlight">Employee</th>
+                    <th class="cell-highlight">Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="show">
+
+            </tbody>
+        </table>
+    </section>
+
+    <script src="view.js" text/javascript></script>
+ </body>
+</html>

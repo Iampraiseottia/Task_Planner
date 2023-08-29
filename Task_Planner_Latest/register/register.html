@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register new task</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="register.css">
+
+    <link>
+</head>
+<body> 
+    <!------------------SIDEBAR--------------------->
+    <nav>
+        <div id="nav-icon">
+            <img src="../img/github-icon.png" class="home-img">
+            <h1>
+                PLANIFY
+            </h1>
+        </div>
+        
+        <div id="links">
+            <a href="../index.html" class="view">Home</a>
+            <a href="../view/view.html" class="register">View Task</a>
+        </div>
+    </nav> 
+
+    <section class="wrapper">
+        <div class="borderline">
+        <form action="../view/view.html" onsubmit="return submitbtn()">
+            <h1>Register New Task</h1>
+            <div class="input_box">
+                <box-icon name="rename" color="#dbdbdb"></box-icon>
+                <input type="text" id="title" minlength="2" maxlength="30" name="title" required>
+                <label>Title</label>
+                <i></i>
+                <small id="titleerror">error message</small>
+            </div>
+
+            <div class="input_box">
+                <box-icon type='solid' name='timer' color="#dbdbdb"></box-icon>
+                <input id="duration" type="number" required>
+                <label>Duration(Hours)</label>
+                <i></i>
+                <small>error message</small>        
+            </div>
+
+            <div class="input_box">
+                <box-icon name='keyboard' type="solid" color="#dbdbdb"></box-icon>
+                <textarea type="text" id="description" placeholder="Description" name="Description" required></textarea>
+                <small id="descerror">error message</small>
+            </div>
+
+            <button type="submit" class="btn">Confirm</button>
+ 
+
+        </form>
+        </div>
+    </section>
+    <script type="text/javascript" src="register.js">
+   
+    </script>
+</body>
+</html>
