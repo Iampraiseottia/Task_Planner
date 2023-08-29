@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: sans-serif, 'poppins';
+    background: rgb(246, 243, 243);
+}
+
+/*ALL TASK*/
+#view-head{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-betweens;
+    margin-left:20px;
+    margin-right: 30px;
+    margin-top: 40px;
+}
+
+.search-area{
+    display: flex;
+    align-items: center;
+}
+
+.search-img{
+    width: 36px;
+    height: 30px;
+    border: 1px solid lightgray;
+    margin-left: 0px;
+    padding: 5px;
+}
+
+.search-img:hover{
+    cursor: pointer;
+}
+
+.search{
+    height: 40px;
+    width: 460px;
+    padding-left: 10px;
+    border: 1px solid lightgray;
+    margin-right: 0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+
+
+#view-head h1{
+    color: rgb(77 75 63);
+    font-size: 34px;
+    padding-right: 30px;
+    padding-left: 10px;
+}
+
+#view-head h1:hover{
+    font-size: 30.5px;
+    cursor: pointer;
+}
+
+.view-right-all{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.start-date,
+.end-date,
+.assign{
+    padding-right: 20px;
+}
+
+.assign{
+    font-size: 16px;
+    text-align: center;
+}
+
+.start-date-input,
+.end-date-input,
+.assign select{
+    width: 150px;
+    height: 30px;
+    border: 1px solid lightgrey;
+    background: transparent;
+    padding: 5px,lo;
+}
+
+/* TABLE */
+#table{
+    margin-left: 80px;
+    margin-right: 50px;
+    align-items: center;
+}
+
+tr .urgly{
+    text-align: left;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+thead{
+    color: gray;
+    letter-spacing: 2px;
+}
+
+thead th{
+    width: 148px;
+}
+
+.cell-highlight{
+    background-color: rgb(229, 222, 182);
+    font-weight: bold;
+    font-size: 19px;
+}
+
