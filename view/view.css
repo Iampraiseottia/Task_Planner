@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    cursor: default;
 }
 
 body{
@@ -10,20 +11,17 @@ body{
 
 /*ALL TASK*/
 #view-head{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    margin-left:120px;
-    margin-right: 130px;
-    margin-top: 30px;
+    margin-left:20px;
+    margin-right: 30px;
+    margin-top: 40px;
 }
 
 .search-area{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    margin: 50px 0px 0 370px;
+    
 }
-
 .search-img{
     width: 36px;
     height: 30px;
@@ -32,74 +30,73 @@ body{
     padding: 5px;
 }
 
-.search-img:hover{
-    cursor: pointer;
-}
+
 
 .search{
+    cursor: text;
     height: 40px;
-    width: 360px;
+    width: 460px;
     padding-left: 10px;
     border: 1px solid lightgray;
-    margin-right: 0px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-
+    /* margin-left: 100px; */
 }
+
 
 #view-head h1{
-    color: rgb(236, 213, 85);
-    font-size: 30px;
+    color: rgb(77 75 63);
+    font-size: 34px;
+    padding-right: 30px;
+    padding-left: 10px;
 }
 
-#view-head h1:hover{
-    font-size: 30.5px;
-    cursor: pointer;
+.view-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
-/*SORT*/
-#sort{
-    margin: 50px 100px;
+.view-right h2{
+    margin: 20px 0 0 0;
+    padding-right: 50px;
+}
+.view-right-all{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-#sort h1{
-    color: rgb(6, 230, 118);
+.start-date,
+.end-date,
+.assign{
+    padding-right: 20px;
 }
 
-.sort-btn{
-    height: 50px;
-    width: 93px;
-    cursor: pointer;
-    font-size: 18px;
-    border: 1px solid rgb(158, 148, 90);
-    background-color: rgb(223, 189, 165);
-    backdrop-filter: blur(22px);
-    border-radius: 5px;  
-    box-shadow: 0 0 6px rgb(29, 28, 28);
-}
-
-.report-btn{
+.assign{
+    font-size: 16px;
     text-align: center;
-    height: 50px;
-    width: 93px;
-    font-size: 18px;
-    border: 1px solid rgb(223, 189, 165);
-    background-color: rgb(158, 148, 90);
-    backdrop-filter: blur(22px);
-    margin-left: 420px;
-    border-radius: 5px;
-    margin-top: 100px;
-    box-shadow: 0 0 6px rgb(29, 28, 28);
-    cursor: pointer;
+}
+
+.start-date-input,
+.end-date-input,
+.assign select{
+    width: 150px;
+    height: 30px;
+    border: 1px solid lightgrey;
+    background: transparent;
+    padding: 5px;
 }
 
 /* TABLE */
 #table{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0px 80px;
+    align-items: center;
+    height: max-content;
+    padding-bottom: 100px;
+}
+
+tr .urgly{
+    text-align: left;
 }
 
 th, td{
@@ -112,15 +109,15 @@ table{
     border: 1px solid gray;
     text-align: center;
     vertical-align: middle;
+    width: 100%;
 }
 
-thead{
-    color: gray;
+
+
+table th{
+    color: rgb(93, 11, 69);
     letter-spacing: 2px;
-}
-
-thead th{
-    width: 148px;
+    background-color: rgb(255, 255, 255);
 }
 
 .cell-highlight{
@@ -128,3 +125,4 @@ thead th{
     font-weight: bold;
     font-size: 19px;
 }
+

@@ -10,15 +10,25 @@ body{
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background: url(https://th.bing.com/th/id/R.210eff928a05d316648bd381c255dc82?rik=Gxr16IL2DWvtSQ&pid=ImgRaw&r=0) no-repeat;
+    background: url(../register/img/register.png) no-repeat;
     /* background:aqua; */
     background-size: cover;
     background-position: center;
 }
-
+/* .popup{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c7128e;
+    border-radius: 5px ;
+    box-shadow: 0 2px 5px;
+    position: sticky;
+} */
 .wrapper{
     background: transparent;
-    border: 2px solid rgb(173, 173, 173);
+    border: 2px solid rgb(156, 35, 122s);
     backdrop-filter: blur(30px);
     box-shadow: 0 0 10px #333;
     width: 500px;
@@ -27,7 +37,7 @@ body{
 }
 
 .wrapper .borderline{
-    border: 2px solid #000000;
+    border: 2px solid #c7128e;
     border-radius: 10px;
     padding: 40px;
 }
@@ -35,7 +45,7 @@ body{
 .wrapper h1{
     text-align: center;
     font-size: 36px;
-    color: rgb(0, 0, 0);
+    color: rgb(194, 12, 94);
     font-weight: 400;
 }
 
@@ -51,11 +61,11 @@ body{
     height: 100%;
     background: transparent;
     border: none;
-    /* border-bottom: 2px solid rgb(135, 135, 135); */
     outline: none;
     border-radius: 30px;
     padding: 0px 35px;
     color: rgb(0, 0, 0);
+    font-size: 18px;
 }
 
 .input_box label{
@@ -69,9 +79,10 @@ body{
 
 .input_box input:valid ~ label,
 .input_box input:focus ~label{
-    color: rgb(255, 255, 255);
+    color: #c7128e;
     font-size: 16px;
     transform: translateY(-25px);
+    font-size: 17px;
 } 
 
 .input_box i{
@@ -83,7 +94,7 @@ body{
     overflow: hidden;
     transition: 0.5s;
     pointer-events: none;
-    background: #000000;
+    background: rgb(0, 0, 0);
 }
 
 .input_box small{
@@ -91,12 +102,6 @@ body{
     visibility: hidden;
     color: rgba(253, 6, 6, 0.843);
 }
-
-/* .input_box input::placeholder{
-    position: absolute;
-    color: rgb(255, 255, 255);
-    left: 35px;
-} */
 
 .input_box box-icon{
     position: absolute;
@@ -107,7 +112,7 @@ body{
 .wrapper .btn{
     width: 100%;
     height: 45px;
-    background: rgb(0, 0, 0);
+    background: rgb(118, 12, 46);
     border: none;
     outline: none;
     border-radius: 30px;
@@ -115,5 +120,22 @@ body{
     font-size: 16px;
     color: #ffffff;
     font-weight: 600;
+    margin-top: 20px;
 }
 
+
+textarea{
+    width: 335px;
+    height: 60px;
+    padding: 15px 35px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+textarea ::placeholder{
+    color: black;
+}
+
+
+/* POPPUP */

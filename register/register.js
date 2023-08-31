@@ -11,37 +11,48 @@
     document.querySelector('button').addEventListener('click', (event)=>{
       event.preventDefault();
 
-      // for form validation
-      validateInput;
-
       // to collect data from the input fields
       collect();
+      
+      //
+      submit()
+     
 
-      // to link the page to the view page when the btton is clicked
-      location.assign('../view/view.html')
     });
 
+    function submit(){
+      
+    }
     // function to collect data starts here
     function collect(data){
-      var data = {
-        "title" : document.getElementById('title').value,
-        "description" : document.getElementById('description').value,
-        "duration" : document.getElementById('duration').value
+      // for form validation
+
+      if(title.value.trim()===""||description.value.trim()===""||duration.value.trim()===""){
+        validateInput()
+      console.log('please fill all the fields!')
+
       }
-      let url = "http://localhost:8080/taskManager/api/v1/task/create";
-      fetch(url, {
-        method: 'POST',
-        body : JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': '*/*'
-        } 
-      }).then (res => {
-        res.text().then (inp=>{
-          console.log(inp)
+      else{
+        var data = {
+          "title" : document.getElementById('title').value,
+          "description" : document.getElementById('description').value,
+          "duration" : document.getElementById('duration').value
+        }
+        let url = "http://localhost:8080/taskManager/api/v1/task/create";
+        fetch(url, {
+          method: 'POST',
+          body : JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
+          } 
+        }).then (res => {
+          res.text().then (inp=>{
+            console.log(inp)
+          })
         })
-      })
-      
+      console.log('task created successfully')
+      }
     }       
 
     // validate function starts here
@@ -81,24 +92,16 @@
             messageElement.innerText=message;
     };
 
-      // function updateDisplay(){
-      //   fetch("Readme.txt")
-      //   .then((response) => {
-      //       if (!response.ok) {
-      //       throw new Error(`HTTP error: ${response.status}`);
-      //       }
-      //       return response.text()
-      //   })
-      //   .then((data) => {
-      //     alert(data)
-      //     showInfo(data)  
-      //   }).catch(error => console.log(error));
-      // function showInfo(data){
-      //     data.forEach(TASK => {
-      //       const info =
-      //       `<li>${task.titleph}</li>`
-          
-      //   });
-      // }
-      //   })
-      // }
+    // function poppup(){
+    //   const section = document.querySelector("article"),
+    //     overlay = document.querySelector(".overlay"),
+    //     showBtn = document.querySelector(".show-modal"),
+    //     closeBtn = document.querySelector(".close-btn");
+    //   showBtn.addEventListener("click", () => section.classList.add("active"));
+    //   overlay.addEventListener("click", () =>
+    //     section.classList.remove("active")
+    //   );
+    //   closeBtn.addEventListener("click", () =>
+    //     section.classList.remove("active")
+    //   );
+    // }
