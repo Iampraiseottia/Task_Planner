@@ -28,9 +28,17 @@ nav{
     display: flex;
     align-items: center;
 }
+#nav-icon img{
+    width: 200px;
+    height: 200px;
+    border: none;
+}
 
 #nav-icon h1{
     color: white;
+    font-family: sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
 }
 
 .view:hover,
@@ -120,5 +128,35 @@ aside .tasks{
 }
 .tasks .fa-solid{
     font-size: 100px;
-    color: rgb(4, 4, 4);
+    color: #4c0e2e;
+}
+
+
+footer{
+    width: 97%;
+    height: fit-content;
+    background-color: #4c0e2e;
+    display: flex;
+    overflow: none;
+    justify-content: space-around;
+    color: white;
+    padding: 20px;
+    box-shadow: -5px -20px 5px solid black;
+}
+footer article{
+    display: flex;
+    flex-direction: column;
+}
+.footer a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 2px 0;
+}
+
+#footer_links:hover{
+    color: yellow;
+}
+#footer_link:hover{
+    color: rgba(255, 255, 255, 0.767);
+    cursor: default;
 }

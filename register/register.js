@@ -1,36 +1,39 @@
-// function submitbtn(){
-    // var title = document.getElementById('title').value;
+
+    var title = document.getElementById('title');
     // var description = document.getElementById('description').value;
-    // var duration = document.getElementById('duration');
-    var button = document.querySelector('button');
+    var duration = document.getElementById('duration');
+    var button = document.querySelector('btn');
     var form = document.querySelector('form');
 
     var values = []
     console.log("fields cannot be blank!");
     
-    document.querySelector('button').addEventListener('click', (event)=>{
+    document.querySelector('.btn').addEventListener('click', (event)=>{
       event.preventDefault();
 
       // to collect data from the input fields
       collect();
-      
-      //
-      submit()
-     
 
+      // to store data in local storage for passing into edit page
+      editData()
     });
 
-    function submit(){
-      
+    function editData(){
+      const editDuration = duration.value
+      const editTitle = title.value
+      const editDescription = description.value
+ 
+      localStorage.setItem('editDuration', editDuration)
+      localStorage.setItem('editTitle', editTitle); 
     }
+
     // function to collect data starts here
     function collect(data){
-      // for form validation
 
+      // for form validation
       if(title.value.trim()===""||description.value.trim()===""||duration.value.trim()===""){
         validateInput()
-      console.log('please fill all the fields!')
-
+        console.log('please fill all the fields!')
       }
       else{
         var data = {
@@ -51,7 +54,8 @@
             console.log(inp)
           })
         })
-      console.log('task created successfully')
+        .then(poppup())
+        console.log('task created successfully')
       }
     }       
 
@@ -92,16 +96,9 @@
             messageElement.innerText=message;
     };
 
-    // function poppup(){
-    //   const section = document.querySelector("article"),
-    //     overlay = document.querySelector(".overlay"),
-    //     showBtn = document.querySelector(".show-modal"),
-    //     closeBtn = document.querySelector(".close-btn");
-    //   showBtn.addEventListener("click", () => section.classList.add("active"));
-    //   overlay.addEventListener("click", () =>
-    //     section.classList.remove("active")
-    //   );
-    //   closeBtn.addEventListener("click", () =>
-    //     section.classList.remove("active")
-    //   );
-    // }
+// FUNCTION FOR POPPUP
+function poppup(info) {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+

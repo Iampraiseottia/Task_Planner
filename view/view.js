@@ -10,11 +10,13 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
     console.log(data);
     displayInfo(data)
     displayEmployees(data)
-  })
+  }) 
   .catch((error) => console.error("FETCH ERROR:", error))
 
+
+  //  funtion to show all employees in a dropdown list
   function displayEmployees(data){
-    let url = "http://localhost:8080/taskManager/api/v1/employee/getAllEmployees"
+    const url = "http://localhost:8080/taskManager/api/v1/employee/getAllEmployees"
     fetch(url)
   .then((response) => {
     if (response.ok) {
@@ -23,6 +25,7 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
       throw new Error("NETWORK RESPONSE ERROR");
     }
   })
+  .then((data) => {  
   var employees = document.getElementById('employees')
     for (var i = 0; i < data.length; i++){
       var names =
@@ -35,7 +38,7 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
           </tr>
           <tr>
             <td>
-              ${data[i].employee}
+              ${data[i]}
             </td>
           </tr>
         </option>
@@ -43,7 +46,8 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
       employees.innerHTML += names;
       console.log(employees)
     }
-  }
+  })
+}
 
   function displayInfo(data){
     var showTasks = document.getElementById('show');
@@ -51,16 +55,17 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
         var row = `
             <tr>
                 <td>${i+1}</td>
-                <td>${data[i].title}</td>
-                <td>${data[i].duration}</td>
+                <td id="margin">${data[i].title}</td>
+                <td id="duration">${data[i].duration}</td>
                 <td>${data[i].employee}</td>
                 <td>${data[i].status}</td>
                 <td>
-                  <select>
-                    <option><a href="">Edit</a></option>
-                    <option><a href="">Delete</a></option>
-                    <option><a href="">reassign</a></option>
-                    <option><a href="">progress</a></option>
+                  <select onChange="window.location.href=this.value;" size="1">
+                    <option aria-readonly="true">Select action</option>
+                    <option value="../edit/edit.html">Edit</option>
+                    <option>Delete</option>
+                    <option>reassign</option>
+                    <option>progress</option>
                   </select>
                 </td>
             </tr>
@@ -68,8 +73,7 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
         showTasks.innerHTML += row;
     }
   }
- 
- 
+
 //live searching
  document.querySelector('#search').
  addEventListener('input', filterList)
@@ -88,10 +92,9 @@ fetch("http://localhost:8080/taskManager/api/v1/task/readAll")
       item.style.display = 'none';
     }
   }
-
   );
-
  }
 
-
+//    FILTER LIST
+ 
 

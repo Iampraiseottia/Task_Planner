@@ -19,28 +19,18 @@ body{
 .search-area{
     display: flex;
     flex-direction: row;
-    margin: 50px 0px 0 370px;
-    
+    margin: 50px 0px 0 0px;
+    justify-content: space-evenly; 
+    align-items: center;   
 }
-.search-img{
-    width: 36px;
-    height: 30px;
-    border: 1px solid lightgray;
-    margin-left: 0px;
-    padding: 5px;
-}
-
-
 
 .search{
     cursor: text;
     height: 40px;
-    width: 460px;
-    padding-left: 10px;
+    width: fit-content;
+   padding: 0 300px 0 10px;
     border: 1px solid lightgray;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    /* margin-left: 100px; */
+    border-radius: 5px;
 }
 
 

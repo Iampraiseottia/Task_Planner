@@ -54,8 +54,7 @@
                         <option value="sort-list">Open</option>
                         <option value="sort-list">Assign</option>
                         <option value="sort-list">Done</option>
-                        <option value="sort-list">Not-Done</option>
-                                            
+                        <option value="sort-list">Not-Done</option>      
                     </select>
                 </div>
             </div>
@@ -65,7 +64,23 @@
                
          
                 <input type="text" id="search" placeholder="Live Searching..." class="search" autocomplete="on">
-                <h4 style="color: rgb(196, 98, 98);" id="error"></h4>
+                    <h4>Filter status:</h4>
+                    <div class="filter">
+                        <input type="checkbox" value="open">                            
+                        <label for="open">Open</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" value="assigned">                            
+                        <label for="assigned">Assigned</label>
+                    </div>
+                    <div class="filter">
+                        <input type="checkbox" value="Done">                            
+                        <label for="Done">Done</label>
+                    </div>
+                    <div class="filter">  
+                        <input type="checkbox" value="Not Done">                            
+                        <label for="Not_done">Not Done</label>
+                    </div>
             </div>            
 
     </section>
@@ -90,7 +105,38 @@
         </table>
     </section>
 
+    <!--    FOOTER SECTION -->
+    <footer>
+        <article class="footer">
+                <h3 id="footer_pages"><u>Pages</u></h3>
+                <a href="view/view.html" id="footer_links">View tasks</a>
+                <a href="index.html" id="footer_links">Home</a>
+                <a href="register/register.html" id="footer_links">Register new task</a>
+        </article>
+        <article class="footer">
+                <h3><u>Other</u></h3>
+                <a href="#" id="footer_links">About us</a>
+                <a href="#" id="footer_links">Contact Us</a>
+                <a href="#" id="footer_links">Other services</a>
+        </article>
+        <article class="footer">
+            <h3><u>Social</u></h3>
+            <div class="box_social">
+                <box-icon type='logo' name='github' color="white"></box-icon>
+                <a href="https://github.com/Iampraiseottia/Task_Planner.git" id="footer_link">https://github.com/Iampraiseottia/Task_Planner.git</a>
+            </div>
+            <div class="box_social">
+                <box-icon name='envelope' color="white"></box-icon>
+                <a href="ottiapraise50@gmail.com" id="footer_link">ottiapraise50@gmail.com</a>
+            </div>
+            <div class="box_social">
+                <box-icon name='envelope' color="white"></box-icon>
+                <a href="engfj2003@gmail.com" id="footer_link">engfj2003@gmail.com</a>
+            </div>
+        </article>
 
+        
+    </footer>
     <script src="view.js" text/javascript></script>
  </body>
 </html>

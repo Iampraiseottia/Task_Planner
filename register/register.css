@@ -6,15 +6,16 @@
 }
 
 body{
-    justify-content: center;
     display: flex;
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    width: 100%;
+    height: fit-content;
     background: url(../register/img/register.png) no-repeat;
-    /* background:aqua; */
     background-size: cover;
     background-position: center;
 }
+
 /* .popup{
     width: 400px;
     height: 400px;
@@ -33,7 +34,7 @@ body{
     box-shadow: 0 0 10px #333;
     width: 500px;
     border-radius: 10px;
-    padding: 40px 40px;
+    padding: 40px;
 }
 
 .wrapper .borderline{
@@ -139,3 +140,68 @@ textarea ::placeholder{
 
 
 /* POPPUP */
+/* Popup container */
+.popup {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23%;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: fit-content;
+    box-shadow: 0 2px 5px #4e4e4e;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px;
+    height: fit-content;
+    z-index: 1;
+    font-size: 16px;
+  }
+  .poppupButton{
+    margin: 15px 10px 0 0;
+    width: fit-content;
+    padding: 5px;
+    outline: none;
+  }
+  .poppupButton a{
+    text-decoration: none;
+    color: #000000;
+    font-size:14px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  
